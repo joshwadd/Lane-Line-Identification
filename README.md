@@ -135,7 +135,7 @@ It is often convenient to work with the Hough transform in polar coordinates, do
 - min line length : Minimum number of pixels making up the line
 - max line gap : Maximum gap in pixels between the connectable line segments 
 
-
+The optimal hyper paramters for the Hough transform are given as default values to the Hough tranform function call below
 
 ```python
 def draw_lines(img, lines, color=[255, 0, 0], thickness=2):
@@ -155,4 +155,7 @@ def hough_lines_basic(img, rho=2, theta=np.pi/180, threshold=20, min_line_len=25
     return line_img
 ```
 
+The image below shows in red all lines identified by the Hough transform side by side with the original image which was input to the pipeline.
+
+![png](image_output/hough_tranform.png)
 
