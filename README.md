@@ -33,3 +33,7 @@ The Canny edge detector is a classic edge detection algorithm proposed by John F
 2. Reduce high frequency information with Gaussian blur.
 3. Use the Canny edge detector
 
+### Reduce Image to Grayscale
+
+An RGB color image is a vector valued function across the image spatial domain. The Canny algorithm uses the gradient of this function with edges responding to large gradients in the image. To easily identify edges present in an image, it is easier to project this vector valued function into a single scaler valued function to have absolute agreement of edges between image channels. To do this we convert the three channel RGB image to a single channel grayscale image.
+
