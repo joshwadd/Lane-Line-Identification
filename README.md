@@ -249,7 +249,8 @@ def calculate_average_lines(lines):
     average_left_lane = np.dot(weights_left, left_lane_lines)
     
     return average_left_lane, average_right_lane
-
-
 ```
 
+The final identifed lane lines found using this image are then superimposed into the test data set.
+
+![png](image_output/Extended_pipeline.png)
