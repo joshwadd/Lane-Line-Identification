@@ -122,3 +122,6 @@ Excluding all content outside the ROI mask for the Canny edge detector then furt
 ***
 ## Hough Transform
 
+The previous stages in the pipeline have removed all information from the image except for the outline of the road line markings we are interested in. We now need a technique that is capable of detecting the lines that remain in the image, to do this we can use the Hough transform.
+
+
