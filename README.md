@@ -122,6 +122,9 @@ Excluding all content outside the ROI mask for the Canny edge detector then furt
 ***
 ## Hough Transform
 
-The previous stages in the pipeline have removed all information from the image except for the outline of the road line markings we are interested in. We now need a technique that is capable of detecting the lines that remain in the image, to do this we can use the Hough transform.
 
+The Hough transform is a feature extraction technique that is popular in computer vision and image analysis that is used to find straight lines in an image. Any "x vs y" line can be transformed to a point in Hough space, the basis of which is made up of "m vs b" (gradient vs intercept of the line). The hough transform is the algorithm that converts the representation of straight lines between these two spaces. Any line in an image has a direct mapping to a point in Hough space, for more details of the theoretical considerations underlining the Hough transform see the associated link.
 
+[Hough Transform](https://docs.opencv.org/2.4/doc/tutorials/imgproc/imgtrans/hough_lines/hough_lines.html)
+
+It is often convenient to work with the Hough transform in polar coordinates, doing so results in the following hyper-parameters that again need to be found by empirically testing on test data sets.
