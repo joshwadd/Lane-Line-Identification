@@ -138,6 +138,12 @@ It is often convenient to work with the Hough transform in polar coordinates, do
 
 
 ```python
+def draw_lines(img, lines, color=[255, 0, 0], thickness=2):
+    
+    for line in lines:
+        for x1,y1,x2,y2 in line:
+            cv2.line(img, (x1, y1), (x2, y2), color, thickness)
+
 def hough_lines_basic(img, rho=2, theta=np.pi/180, threshold=20, min_line_len=25, max_line_gap=10):
     """
     `img` should be the output of a Canny transform.
