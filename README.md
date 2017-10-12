@@ -168,3 +168,10 @@ def weighted_img(img, initial_img, α=0.8, β=1., λ=0.)
 
 ```
 
+![png](image_output/Basic_pipeline.png)
+
+
+
+
+
+
