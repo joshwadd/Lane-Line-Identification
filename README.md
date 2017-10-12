@@ -171,6 +171,17 @@ def weighted_img(img, initial_img, α=0.8, β=1., λ=0.)
 ![png](image_output/Basic_pipeline.png)
 
 
+The pipeline presented so far does quite a good job at identifying lines associated with the lane lines on the road. However there are still some issue with the processing pipeline in its current form.
+
+- Edges multiple edges are associated with a given lane line
+
+- Some lane lines are only partially recognized
+
+- The design of some lane lines are dashed, therefore the lines need to be interpolated for the system to know there should be lane lines between these dashes.
+
+***
+
+## Average
 
 
 
