@@ -59,4 +59,12 @@ The kernel size of the Gaussian filter is a hyper-parameter that requires choice
 
 ![png](image_output/Gaussian_blur.png)
 
+### Canny Edge Detection
+Finally we can use the canny edge detection algorithm on the preprocessed image of the road. The OpenCV implementation of the Canny edge detection algorithm has two threshold parameter values which again need to be chosen based on empirical testing.
+
+
+```python
+def canny(img, low_threshold = 50, high_threshold = 150):
+    return cv2.Canny(img, low_threshold, high_threshold)
+```
 
