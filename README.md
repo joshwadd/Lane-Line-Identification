@@ -37,3 +37,9 @@ The Canny edge detector is a classic edge detection algorithm proposed by John F
 
 An RGB color image is a vector valued function across the image spatial domain. The Canny algorithm uses the gradient of this function with edges responding to large gradients in the image. To easily identify edges present in an image, it is easier to project this vector valued function into a single scaler valued function to have absolute agreement of edges between image channels. To do this we convert the three channel RGB image to a single channel grayscale image.
 
+```python
+def grayscale(img):
+    return cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+```
+
+
