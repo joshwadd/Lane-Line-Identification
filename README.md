@@ -22,3 +22,4 @@ Detecting lane lines in the road is an important feature extraction step used fo
 For this task I develop a system that is capable of detecting lane lines in video data taken from a front facing mount on a car. As the system is required to be fast and running in real time for a final hardware implementation, the pipeline will be designed to work on individual frames and take no account of any temporal or optical flow information present in the video data. Examples of the types of image we want to be able to detect lane lines on are shown below
 
 
+![png](image_output/output2.png)
