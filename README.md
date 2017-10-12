@@ -265,3 +265,11 @@ The modifications made to extend the lane line identification pipeline have reso
 
 ***
 ## Conclusion and Reflection
+
+The pipeline outlined above has been demonstrated to be quite successful in identifying the lane line markings in video data fro a front facing camera. The overall pipeline is lightweight and can easily be applied to real-time application of for lane detection using visual data.
+
+The architecture uses a series of traditional computer vision techniques. The downside of such an approach being that each stage of the image processing pipeline has to be hand tweaked and limits the model to the limited set of training data it was hand tweaked to. This is expensive laboriously and also will also show much lower performance then more modern end 2 end deep learning system trained for a semantic segmentation task for example.
+
+The region of interest was chosen for a limited six training examples. In each of these examples the road in front is clear and extends far into the distance. The other components of the pipeline are also hand tuned around this assumption. If another car enters the region of interest of a steep incline arises then the system would be expected to show poor ability to detect the remaining lane lines, that the averaging of the other lines in the ROI would corrupt this.
+
+The use of the Hough transform it limiting in a sense that it will only perform optimally for straight road lines. Although this is valid for a large proportion of the usage of an autonomous car, long turns in the road (such as seen for the challenge video data) can cause difficulty accurately fitting two single straight lines to the lane lines and can cause poor performance in these settings. Attempts to fix this could be done by fitting higher order polynomials to the features extracted from the road, in an attempt to identify this curvature in the road.
