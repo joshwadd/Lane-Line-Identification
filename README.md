@@ -159,3 +159,12 @@ The image below shows in red all lines identified by the Hough transform side by
 
 ![png](image_output/hough_tranform.png)
 
+Using the following function is it possible to view the dectected lines superimposed on the input image set for the whole test data set 
+
+```python
+def weighted_img(img, initial_img, α=0.8, β=1., λ=0.)
+   
+    return cv2.addWeighted(initial_img, α, img, β, λ)
+
+```
+
