@@ -109,3 +109,7 @@ def region_of_interest(img, vertices):
     return masked_image
 ```
 
+The region which was found to contain the most amount of road and exclude the most amount of background across the test images was a four sided polygon.
+
+
+![png](image_output/ROI_vis.png)
