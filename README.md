@@ -266,7 +266,7 @@ The modifications made to extend the lane line identification pipeline have reso
 ***
 ## Conclusion and Reflection
 
-The pipeline outlined above has been demonstrated to be quite successful in identifying the lane line markings in video data fro a front facing camera. The overall pipeline is lightweight and can easily be applied to real-time application of for lane detection using visual data.
+The pipeline outlined above has been demonstrated to be quite successful in identifying the lane line markings in video data for a front facing camera. The overall pipeline is lightweight and could easily be applied to real-time system for lane detection using visual data.
 
 The architecture uses a series of traditional computer vision techniques. The downside of such an approach being that each stage of the image processing pipeline has to be hand tweaked and limits the model to the limited set of training data it was hand tweaked to. This is expensive laboriously and also will also show much lower performance then more modern end 2 end deep learning system trained for a semantic segmentation task for example.
 
