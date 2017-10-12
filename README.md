@@ -57,4 +57,6 @@ def gaussian_blur(img, kernel_size = 5):
 
 The kernel size of the Gaussian filter is a hyper-parameter that requires choice by empirical testing. The standard deviation of the Gaussian filter is calculated using the kernel size according the the documentation. The kernel choice is then equivalent to choosing the bandwidth of the low pass filtering. Empirical testing found 5 to be a good choice for the kernel size. 
 
+![png](image_output/Gaussian_blur.png)
+
 
