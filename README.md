@@ -69,7 +69,7 @@ Finally we can use the canny edge detection algorithm on the preprocessed image 
 def canny(img, low_threshold = 50, high_threshold = 150):
     return cv2.Canny(img, low_threshold, high_threshold)
 ```
-The two threshold parameters control the cutoff ranges of what gradients between pixels are to be considered edges and which are not.
+The two threshold parameters control the cutoff ranges effecting which gradients between pixels are considered to be edges, and which are not.
 
 - Any gradient greater then the high threshold is considered as an edge.
 - Any gradient lower then the low threshold is not considered as an edge.
@@ -191,7 +191,7 @@ We now consider how to extend the pipeline to resolve some of these issues.
 
 - The identified lines from the hough transform can be separated into the associated left and right lane groupings by considering the gradients as they will have opposite signs. 
 
-- We also apply weighting to the averaging by weighting the gradient and intercept of each line by the l2 distance of each line. This is done as longer lines should be more certainly associated with lane line as opposed to small elements of noise in the road.
+- We also apply weighting to the averaging by weighting the gradient and intercept of each line by the l2 distance of each line. This is done as longer lines should be more certainly associated with lane lines as opposed to a small element of noise in the road.
 
 
 The following two functions calculate the weighted average of lines identifed by the hough tranforms to produce a final left and right lane line, and then find the locations on which to draw the new lines.
