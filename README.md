@@ -194,5 +194,62 @@ We now consider how to extend the pipeline to resolve some of these issues.
 - We also apply weighting to the averaging by weighting the gradient and intercept of each line by the l2 distance of each line. This is done as longer lines should be more certainly associated with lane line as opposed to small elements of noise in the road.
 
 
+The following two functions calculate the weighted average of lines identifed by the hough tranforms to produce a final left and right lane line, and then find the locations on which to draw the new lines.
 
+```python
+def line_2_points(y1,y2,line):
+
+    if len(line) != 2:
+        return None
+    
+    gradient, intercept = line
+    x1 = int((y1 - intercept)/gradient)
+    x2 = int((y2 - intercept)/gradient)
+    y1 = int(y1)
+    y2 = int(y2)
+    
+    return((x1,y1), (x2,y2))
+    
+def calculate_average_lines(lines):
+    
+    left_lane_lines = []
+    left_line_distances = []
+    right_lane_lines = []
+    right_line_distances = []
+    
+    for i,line in enumerate(lines):
+        for x1,y1,x2,y2 in line:
+            if (x1==x2 or y1==y2):
+                #If we incounter a horiztonal or vertical line
+                #then continue to next iteration
+                continue
+            #Calcuate attributes of the line
+            gradient = (y2-y1)/(x2-x1)
+            intercept = y2 - gradient*x2
+            l2_distance = np.sqrt((y2-y1)**2 + (x2-x1)**2)
+            
+            if gradient > 0:
+                right_lane_lines.append((gradient, intercept))
+                right_line_distances.append(l2_distance)
+            else:
+                left_lane_lines.append((gradient, intercept))
+                left_line_distances.append(l2_distance)
+                
+            
+    right_sum_dis = np.sum(right_line_distances)
+    left_sum_dis = np.sum(left_line_distances)
+            
+    right_line_distances = np.asarray(right_line_distances)
+    right_line_distances = np.asarray(right_line_distances)
+    
+    weights_right = right_line_distances / right_sum_dis
+    weights_left = left_line_distances / left_sum_dis
+    
+    average_right_lane = np.dot(weights_right, right_lane_lines)
+    average_left_lane = np.dot(weights_left, left_lane_lines)
+    
+    return average_left_lane, average_right_lane
+
+
+```
 
