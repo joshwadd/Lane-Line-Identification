@@ -113,3 +113,9 @@ The region which was found to contain the most amount of road and exclude the mo
 
 
 ![png](image_output/ROI_vis.png)
+
+Excluding all content outside the ROI mask for the Canny edge detector then further reduces the information into the image to the line lane data.
+
+
+![png](image_output/Canny_edge_image.png)
+
