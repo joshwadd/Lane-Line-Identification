@@ -251,6 +251,14 @@ def calculate_average_lines(lines):
     return average_left_lane, average_right_lane
 ```
 
-The final identifed lane lines found using this image are then superimposed into the test data set.
+The final identifed lane lines found using the extended pipeline are then superimposed into the test data set.
 
 ![png](image_output/Extended_pipeline.png)
+
+***
+## Application to Video Data
+
+The modifications made to extend the lane line identification pipeline have resolved many of the short comings mentioned above. As mentioned before, we can now apply the pipeline outlined above to video data by considering video as a serise of images with no temporal effects taken advantage by the algorithm. The videos can be found links below
+
+[Solid White Right](https://youtu.be/gcRVc0u5Qr0)
+[Solid Yellow Left](https://youtu.be/Dhsz_8V4BEA)
