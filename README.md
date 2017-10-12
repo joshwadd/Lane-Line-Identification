@@ -23,3 +23,13 @@ For this task I develop a system that is capable of detecting lane lines in vide
 
 
 ![png](image_output/output2.png)
+
+***
+## Canny Edge Dectection
+
+The Canny edge detector is a classic edge detection algorithm proposed by John F. Canny in 1986. The procedure uses multi-stage approach to reduce the amount of information in an image down to the useful structural edges present. It has been used widely as a preprocessing step in many computer vision applications. To effectively use the canny edge detection algorithm built into OpenCV the procedure can be broken down to three key stages
+
+1. Reduce image to grayscale.
+2. Reduce high frequency information with Gaussian blur.
+3. Use the Canny edge detector
+
