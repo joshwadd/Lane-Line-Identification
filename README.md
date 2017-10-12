@@ -128,3 +128,9 @@ The Hough transform is a feature extraction technique that is popular in compute
 [Hough Transform](https://docs.opencv.org/2.4/doc/tutorials/imgproc/imgtrans/hough_lines/hough_lines.html)
 
 It is often convenient to work with the Hough transform in polar coordinates, doing so results in the following hyper-parameters that again need to be found by empirically testing on test data sets.
+
+- rho : Distance resolution in pixels of the Hough grid
+- theta : Angular resolution in radians of the Hough grid
+- threshold : Minimum number of votes (Intersections on the Hough Grid)
+- min_line_length : Minimum number of pixels making up the line
+- max_line_gap : Maximum gap in pixels between the connectable line segments 
