@@ -78,3 +78,6 @@ The two threshold parameters control the cutoff ranges of what gradients between
 These conditions allow the identification of sharpe lines corresponding to the presence of and edge in the image.
 
 ![png](image_output/Canny_edge_image.png)
+
+***
+## Region of Interest Mask
