@@ -43,3 +43,16 @@ def grayscale(img):
 ```
 
 ![png](image_output/grayscale_images.png)
+
+### Gaussian Blur
+
+Edge detection found using the canny algorithm is easily impacted by any noise in the image. Since possible noise artifacts present in the image are likely to be high frequency in nature, and the useful edge information is much lower frequency this potential noise can easily be eliminated using a low pass filter. To perform low pass filtering on the image a Gaussian filter is convolved across the image, this can be done using the OpenCV Gaussian blur function. The Gaussian blur function in OpenCV is called as
+
+```python
+def gaussian_blur(img, kernel_size = 5):
+    return cv2.GaussianBlur(img, (kernel_size, kernel_size), 0)
+```
+
+The kernel size of the Gaussian filter to be constructed in a hyper-parameter that requires choice by empirical testing.
+
+
