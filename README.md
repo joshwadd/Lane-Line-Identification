@@ -69,6 +69,11 @@ Finally we can use the canny edge detection algorithm on the preprocessed image 
 def canny(img, low_threshold = 50, high_threshold = 150):
     return cv2.Canny(img, low_threshold, high_threshold)
 ```
+The two threshold parameters control the cutoff ranges of what gradients between pixels are to be considered edges and which are not.
 
+- Any gradient greater then the high threshold is considered as an edge.
+- Any gradient lower then the low threshold is not considered as an edge.
+- Any gradient in between the two threshold is considered to be a gradient, on the condition that it is adjacent to a pixel with a gradient that is above the higher threshold
 
+These conditions allow the identification of sharpe lines corresponding to the presence of and edge in the image.
 
