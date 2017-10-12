@@ -173,7 +173,7 @@ def weighted_img(img, initial_img, α=0.8, β=1., λ=0.)
 
 The pipeline presented so far does quite a good job at identifying lines associated with the lane lines on the road. However there are still some issue with the processing pipeline in its current form.
 
-- Edges multiple edges are associated with a given lane line
+- Multiple edges are associated with a given lane line
 
 - Some lane lines are only partially recognized
 
@@ -181,7 +181,17 @@ The pipeline presented so far does quite a good job at identifying lines associa
 
 ***
 
-## Average
+## Extending the Pipeline by Averaging and Extrapolating
+
+We now consider how to extend the pipeline to resolve some of these issues.
+
+- Ultimately what we require is two single lines, one corresponding to each lane line. 
+
+- A suitable approach to achieve this then is to average the gradient and intercept of all identified lines associated with each lane to find two final lane lines. 
+
+- The identified lines from the hough transform can be separated into the associated left and right lane groupings by considering the gradients as they will have opposite signs. 
+
+- We also apply weighting to the averaging by weighting the gradient and intercept of each line by the l2 distance of each line. This is done as longer lines should be more certainly associated with lane line as opposed to small elements of noise in the road.
 
 
 
