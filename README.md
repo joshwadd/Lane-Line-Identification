@@ -258,7 +258,7 @@ The final identifed lane lines found using the extended pipeline are then superi
 ***
 ## Application to Video Data
 
-The modifications made to extend the lane line identification pipeline have resolved many of the short comings mentioned above. As mentioned before, we can now apply the pipeline outlined above to video data by considering video as a serise of images with no temporal effects taken advantage by the algorithm. The videos can be found links below
+The modifications made to extend the lane line identification pipeline have resolved many of the short comings mentioned above. As mentioned before, we can now apply the pipeline outlined above to video data by considering video as a serise of images with no temporal effects being taken advantage of by the algorithm. The videos can be found in the links below
 
 [Solid White Right](https://youtu.be/gcRVc0u5Qr0)
 [Solid Yellow Left](https://youtu.be/Dhsz_8V4BEA)
