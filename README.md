@@ -132,5 +132,21 @@ It is often convenient to work with the Hough transform in polar coordinates, do
 - rho : Distance resolution in pixels of the Hough grid
 - theta : Angular resolution in radians of the Hough grid
 - threshold : Minimum number of votes (Intersections on the Hough Grid)
-- min_line_length : Minimum number of pixels making up the line
-- max_line_gap : Maximum gap in pixels between the connectable line segments 
+- min line length : Minimum number of pixels making up the line
+- max line gap : Maximum gap in pixels between the connectable line segments 
+
+
+
+```python
+def hough_lines_basic(img, rho=2, theta=np.pi/180, threshold=20, min_line_len=25, max_line_gap=10):
+    """
+    `img` should be the output of a Canny transform.
+    Returns an image with hough lines drawn.
+    """
+    lines = cv2.HoughLinesP(img, rho, theta, threshold, np.array([]), minLineLength=min_line_len, maxLineGap=max_line_gap)
+    line_img = np.zeros((img.shape[0], img.shape[1], 3), dtype=np.uint8)
+    draw_lines(line_img, lines)
+    return line_img
+```
+
+
